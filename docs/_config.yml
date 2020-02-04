@@ -1,0 +1,9 @@
+theme: jekyll-theme-cayman
+title: Cosivina
+title_suffix: Python library to Compose, Simulate and Visualize Neurodynamic Architectures.
+plugins:
+  - jekyll-relative-links
+baseurl: /cosivina-python
+
+titles_from_headings:
+  enabled:     false
