@@ -13,7 +13,7 @@ class Element():
         self.num_inputs = 0
         self.input_elements = []
         self.input_components = []
-        self.paramaters = parameters
+        self.parameters = parameters
 
     def _delete_elements(self):
         self.input_elements = []
@@ -31,7 +31,7 @@ class Element():
         parameter_name : str
         Returns True if parameter_name string exists in self.parameters
         '''
-        return any(item == parameter_name for item in self.paramaters)
+        return any(item == parameter_name for item in self.parameters)
         
     def _component_exists(self, component):
         '''
@@ -40,8 +40,8 @@ class Element():
         '''
         return any(item == component for item in self.input_components)
     
-    def _get_parameter_change_status(self, parameter_name):
+    def _get_parameter_status(self, parameter_name):
         if self._parameter_exists(parameter_name):
-            return parameter_name
+            return '{} exists'.format(parameter_name)
         else:
-            KeyError('No parameter {} found in element.'.format(parameter_name))
+            raise AssertionError('No parameter {} found in element.'.format(parameter_name))
